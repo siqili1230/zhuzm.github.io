@@ -14,6 +14,14 @@
      */
   var demoContent = [
     {
+      demo_link: 'https://movie.douban.com/subject/26387939/',
+      img_link: 'https://img1.doubanio.com/view/photo/l/public/p2456570038.webp',
+      title: '摔跤吧！爸爸',
+      key_word: '剧情 / 传记 / 运动',
+      score: 9.1,
+      description: '马哈维亚（阿米尔·汗 Aamir Khan 饰）曾经是一名前途无量的摔跤运动员，在放弃了职业生涯后，他最大的遗憾就是没有能够替国家赢得金牌。\n马哈维亚将这份希望寄托在了尚未出生的儿子身上，哪知道妻子接连给他生了两个女儿。让马哈维亚没有想到的是，两个姑娘展现出了杰出的摔跤天赋，让他幡然醒悟，就算是女孩，也能够昂首挺胸的站在比赛场上，为了国家和她们自己赢得荣誉......'
+    }, 
+    {
       demo_link: 'https://movie.douban.com/subject/26580232/',
       img_link: 'https://img3.doubanio.com/view/photo/l/public/p2449229311.webp',
       title: '看不见的客人',
@@ -22,20 +30,36 @@
       description: '艾德里安（马里奥·卡萨斯 Mario Casas 饰）经营着一间科技公司，事业蒸蒸日上，家中有美丽贤惠的妻子和活泼可爱的女儿，事业家庭双丰收的他是旁人羡慕的对象。然而，野心勃勃的艾德里安并未珍惜眼前来之不易的生活，一直以来，他和一位名叫劳拉（芭芭拉·蓝妮 Bárbara Lennie 饰）的女摄影师保持着肉体关系......'
     }, 
     {
-      demo_link: 'https://movie.douban.com/subject/26387939/',
-      img_link: 'https://img3.doubanio.com/view/photo/l/public/p2457983084.webp',
-      title: '摔跤吧！爸爸',
-      key_word: '剧情 / 传记 / 运动',
-      score: 9.1,
-      description: '马哈维亚（阿米尔·汗 Aamir Khan 饰）曾经是一名前途无量的摔跤运动员，在放弃了职业生涯后，他最大的遗憾就是没有能够替国家赢得金牌。马哈维亚将这份希望寄托在了尚未出生的儿子身上，哪知道妻子接连给他生了两个女儿。让马哈维亚没有想到的是，两个姑娘展现出了杰出的摔跤天赋，让他幡然醒悟，就算是女孩，也能够昂首挺胸的站在比赛场上，为了国家和她们自己赢得荣誉......'
+      demo_link: 'https://movie.douban.com/subject/26363254/',
+      img_link: 'https://img3.doubanio.com/view/photo/l/public/p2485983612.webp',
+      title: '战狼2',
+      key_word: '动作',
+      score: 7.4,
+      description: '故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场非洲国家叛乱，本可以安全撤离，却因无法忘记曾经为军人的使命，孤身犯险冲回沦陷区，带领身陷屠杀中的同胞和难民，展开生死逃亡。随着斗争的持续，体内的狼性逐渐复苏，最终孤身闯入战乱区域，为同胞而战斗......'
     }, 
     {
-      demo_link: 'https://movie.douban.com/subject/26378579/',
-      img_link: 'https://img3.doubanio.com/view/photo/l/public/p2499792043.webp',
-      title: '王牌特工2：黄金圈',
-      key_word: '喜剧 / 动作 / 冒险',
-      score: 7.3,
-      description: "英国秘密特工组织Kingsman的总部被摧毁，世界已经被劫持，同时，Kingsman们在美国发现了一个盟军间谍组织，这两个精英秘密组织必须团结起来，一同打败敌人。"
+      demo_link: 'https://movie.douban.com/subject/26759539/',
+      img_link: 'https://img3.doubanio.com/view/photo/l/public/p2492917402.webp',
+      title: '十万个冷笑话2',
+      key_word: '喜剧 / 动画 / 奇幻',
+      score: 7.5,
+      description: '拥有着强大力量的创世神杖被四大神之一的埃及神拉（李璐 配音）盗走。为了令宇宙免于被毁灭的悲惨命运，希腊神宙斯（藤新 配音）派出了自己的女儿雅典娜（山新 配音）追踪神杖的下落。\n小金刚（皇贞季 配音）是自幼生长在孤儿院里的平凡少年，常年凭借着机灵的脑瓜靠着坑蒙拐骗赚钱度日，只为了有朝一日身患重病的青梅竹马小青（C小调 配音）能够康复。一次偶然中，小金刚得到了藏有创世神杖下落的藏宝图，随后遭到了雷神托尔（李姝洁 饰）的伏击，在争抢之中，藏宝图被破坏，就这样，小金刚成为了唯一一个知道创世神杖在哪里的凡人。就这样，小金刚、雅典娜、托尔，再加上一个来自东方的脱线河神（郝祥海 饰），一行四人踏上了寻找创世神杖的旅途......'
+    }, 
+    {
+      demo_link: 'https://movie.douban.com/subject/27024903/',
+      img_link: 'https://img3.doubanio.com/view/photo/l/public/p2501863104.webp',
+      title: '天才枪手',
+      key_word: '剧情 / 悬疑 / 犯罪',
+      score: 8.3,
+      description: '影片根据2014年轰动一时的亚洲考场作弊案改编，讲述了天才学霸利用高智商考场作弊牟取暴利的故事。出生平凡的天才少女Lynn（茱蒂蒙·琼查容苏因 饰）在进入贵族学校后，结识了富二代同学Grace（依莎亚·贺苏汪饰）与Pat（披纳若·苏潘平佑饰），从此开始了考场作弊生涯，与此同时，另一名记忆力极佳的天才学霸Bank（查侬·散顶腾古 饰）发现了Lynn不为人知的“交易”。经过多场险象环生的“作弊战争”后，Lynn接下最后一单在国际考场上为富家子弟作弊的天价委托。一场横跨两大洲的完美作弊方案横空出世，然而一切并不像他们想的那么简单......'
+    },
+    {
+      demo_link: 'https://movie.douban.com/subject/10512661/',
+      img_link: 'https://img3.doubanio.com/view/photo/l/public/p2501623796.webp',
+      title: '银翼杀手',
+      key_word: '科幻 / 惊悚',
+      score: 8.4,
+      description: '本片发生在前作30年后，新的银翼杀手、瑞恩·高斯林饰演的洛杉矶警察K发现一个足以颠覆社会的惊天秘密，这个发现让他开始寻找已经消失匿迹30年的前银翼杀手瑞克·戴克（哈里森·福特饰）......'
     }
   ];
 
