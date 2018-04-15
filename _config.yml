@@ -6,39 +6,39 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Jarvis' Blog
-brief-intro: 成功的路上并不拥挤, 因为坚持的人不多
+title: FengHZ' Blog
+brief-intro: 不要用战术上的勤奋掩盖战略上的懒惰
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jarvis73.github.io" # the base hostname & protocol for your site
+url: "https://FengHZ.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username: z2014jw
+twitter_username: 
 facebook_username: 
-github_username: jarvis73
-email: jarviszhang233@gmail.com
-weibo_username: 5336691469
-zhihu_username: lin-xi-1-1
+github_username: FengHZ
+email: fenghaozhe1996@gmail.com
+weibo_username: 
+zhihu_username: 小透明
 linkedIn_username: 
 dribbble_username:
 
-description_footer: 总有美丽的风景让人流连
+description_footer: 因特纳雄耐尔就一定要实现！
 
 # comments
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
 duoshuo_shortname: 
 disqus_shortname: 
-gitment_id: 01d9221acf3b43e667f0
-gitment_secret: f6899a32188afe9260ce0bfa293c7c51285463f2
+gitment_id: 0d51978e1cee4500c33a
+gitment_secret: 6ae07ccb4bcc78c7f8ed06242a7da2fc2d2254e8
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
-baidu_tongji_id: fef7d5140c6a1e15e3be61d9249fa575
-google_analytics_id: UA-108096001-1 # google 分析追踪id
+baidu_tongji_id: 
+google_analytics_id: UA-117579925-1 # google 分析追踪id
 
 # Build settings
 markdown: kramdown
