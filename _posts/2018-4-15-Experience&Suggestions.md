@@ -92,7 +92,7 @@ mathjax: true
 
 * [陈为](http://www.cad.zju.edu.cn/home/vagwiki/index.php/Research)
 
-  可视化小组国内第一，世界前列。深度学习方向与睿医合作
+  可视化小组世界前列。深度学习方向与睿医合作
 
   数学系学长
 
@@ -112,13 +112,11 @@ mathjax: true
 
   现在正在开始2018年推免报名，5月初截止。[这里是2017年的报名信息](http://mypage.zju.edu.cn/0004274)
 
-  17年张天平成功申请，挂名导师姚期智，[实际导师的简历看这里](http://iiis.tsinghua.edu.cn/~jianli/recruit.htm)
+  17年统计学长成功申请，挂名导师姚期智，[实际导师的简历看这里](http://iiis.tsinghua.edu.cn/~jianli/recruit.htm)
 
 * [南京大学周志华组(Lambda实验室)]([https://cs.nju.edu.cn/zhouzh/zhouzh.files/recruit.htm](qq://txfile/#))
 
   申请难度相对简单
-
-  17年朱正茂成功申请(成绩88/100)
 
   材料：简历，成绩单，研究动机，ddl5月20日，面试通知时间6月1日
 
@@ -134,11 +132,6 @@ mathjax: true
 
 * 管理学院副院长周伟华组(金融大数据实验室)
 
-  去年让我帮忙推荐过，以读博士优先
-
-  浙大竺院混合班毕业
-
-**90年代数学系出身的学长们已经在浙江大学的各行各业占据了一片天地**
 
 ## 如何准备面试
 
@@ -180,8 +173,6 @@ mathjax: true
 
 ## 安全问题
 
-### 一个故事
-
 ### 基本准则
 
 **着重强调三大基本准则**
@@ -213,5 +204,3 @@ You Always Have a Choice。
 祝大家都有一个美好的未来。
 
 评论区已开放
-
-## Questions?
