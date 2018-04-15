@@ -3,7 +3,7 @@ layout: post
 title: Group Normalization 阅读笔记
 date: 2018-04-10 10:49:00
 categories: 深度学习
-tags: Base
+tags: Normalization
 mathjax: true
 figure: /images/2018-4-15/Batch_Norm_Picture.png
 ---
