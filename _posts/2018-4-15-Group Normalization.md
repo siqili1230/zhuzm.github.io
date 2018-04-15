@@ -26,13 +26,13 @@ figure: /images/2018-4-15/Batch_Norm_Picture.png
 
 一图流：
 
-![Batch_Norm_Picture](C:\Users\Jiazhe Love Junjun\Desktop\FengHZ.github.io\images\2018-4-15\Batch_Norm_Picture.png)
+![Batch_Norm_Picture](/images/2018-4-15/Batch_Norm_Picture.png)
 
 传统的Batch Norm的想法其实很简单，就是假设我输出的是一个N维C个Channel的H*W的图片，那么我认为这个图片应该被中心化，也就是说我认为这个图片记录的特征需要做标准化，也就是把图片拉成一个向量，然后我认为这个向量是很多数据点组成的，它们满足一个分布（注意这里的语境是这些数据点满足了一个参数分布，而这个数据点并不是独立的），因此我们可以认为这些数据点是满足一个分布的。而BN的作用就是把这个数据点进行扩大，让这个假设更加地strong可以认为这样（因为这个假设是很弱的，但是如果这个假设我对每个数据点进行重复采样，那么这个假设会变得很强，或者更稳定。它可以极大避免数值弥散问题。
 
 作者给出了一组数据图:
 
-![batch_size](C:\Users\Jiazhe Love Junjun\Desktop\FengHZ.github.io\images\2018-4-15\batch_size.png)
+![batch_size](/images/2018-4-15/batch_size.png)
 
 在batch size为1的时候的Batch Norm就是Instance Norm，在Batch Size变大的时候相应起到了统计的结果。这里的作用就是用Group Norm来代替了batch，在batch size很小的时候起到了很好的结果。
 
@@ -52,7 +52,7 @@ Group卷积是一个为了解决显卡显存不足的操作，总之就是把输
 
 从Alex Net的群卷积而言，本文就是从这个想法得到的灵感。具体而言就是直接把特征进行Group分类（给的Group是32默认，文中探究了如何设置group的这样的数据：
 
-![groupnorm](C:\Users\Jiazhe Love Junjun\Desktop\FengHZ.github.io\images\2018-4-15\groupnorm.png)
+![groupnorm](/images/2018-4-15/groupnorm.png)
 
 这个结果表示，一般选16个Channel一个Group，或者把Group Size设置为32都还行。或者也可以适当调整Group的数目。总之Group过多调Group，channel过少调channel这样是比较好的想法。
 
