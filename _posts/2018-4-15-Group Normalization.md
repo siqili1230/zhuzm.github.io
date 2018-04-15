@@ -16,9 +16,8 @@ figure: /images/2018-4-15/Batch_Norm_Picture.png
 
 这篇论文提出了Group Normalization这一方法，并深入研究了其它的Batch Norm方法，我将从以下2点展开介绍
 
-### 传统上有什么样的Batch Normalization方法，它们起到了什么样的结果，有什么局限
-
-### Group Normalization方法的基本思想是什么，它应该怎样使用
+1. 传统上有什么样的Batch Normalization方法，它们起到了什么样的结果，有什么局限
+2. Group Normalization方法的基本思想是什么，它应该怎样使用
 
 
 
