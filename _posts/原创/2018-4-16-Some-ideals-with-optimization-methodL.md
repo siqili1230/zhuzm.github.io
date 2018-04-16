@@ -27,6 +27,9 @@ Tensorflow官网上有一个Trick是这样的：
 
 我觉得这个策略等价于调整momentum与学习率，特此给出证明与分析
 
+
+
+
 ## momentum方法的等价形式
 
 假设我们的参数初始化均值为0，采用momentum方法进行优化，momentum系数为$\gamma$，学习率为$\eta$。那么优化过程可以写成如下形式：
