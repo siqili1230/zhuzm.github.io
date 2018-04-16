@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Deep Adversarial Network相关内容阅读笔记
+title: Deep Adversarial Network 相关笔记
 date: 2018-04-16 10:49:00
 categories: 深度学习
-tags: "Adversarial Strategy" "Semantic Segmentation"
+tags: "Adversarial Strategy"
 mathjax: true
 figure: /images/2018-4-16/[4].png
 ---
