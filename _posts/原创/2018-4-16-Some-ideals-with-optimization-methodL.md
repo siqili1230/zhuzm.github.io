@@ -9,9 +9,7 @@ mathjax: true
 
 * content
 {:toc}
-
-
-# 一个关于优化算法等价于时间序列的思考
+题目：一个关于优化算法等价于时间序列的思考
 
 **FengHZ‘s Blog首发原创**
 
@@ -33,6 +31,7 @@ Tensorflow官网上有一个Trick是这样的：
 ## momentum方法的等价形式
 
 假设我们的参数初始化均值为0，采用momentum方法进行优化，momentum系数为$\gamma$，学习率为$\eta$。那么优化过程可以写成如下形式：
+
 $$
 v_0=0;w_0=0\\
 v_1=(1-\gamma)v_0+\gamma \nabla_1J(\theta_1)=\gamma \nabla_1J(\theta_1)\\
@@ -46,20 +45,31 @@ w_3=w_2+(1-\gamma)(w_2-w_1)-\eta\gamma\nabla_3J(\theta_3)\\
 =(2-\gamma)w_2-(1-\gamma)w_1-\eta\gamma\nabla_3J(\theta_3)\\
 w_n=(1+(1-\gamma))w_{n-1}-(1-\gamma)w_{n-2}-\eta\gamma\nabla_nJ(\theta_n)\\
 $$
+
 这其实就是一个自回归（或者说关于时间序列$(\nabla_1J(\theta_1),\nabla_2J(\theta_2),...,\nabla_nJ(\theta_n))$的这样一个滑动平均）。
 
 如果我们采用策略
+
 $$
 \hat{w_t}=mw_{t}+(1-m)w_{t-1}
 $$
+
 那么这等价于
+
+
 $$
 \hat{w_t}=mw_{t}+(1-m)w_{t-1}\\
 =m(2-\gamma)w_{t-1}-(1-\gamma)w_{t-2}-\eta\gamma\nabla_tJ(\theta_t))+(1-m)w_{t-1}\\
 =(1+m-m\gamma)w_{t-1}-m(1-\gamma)w_{t-2}-m\eta\gamma\nabla_tJ(\theta_t)\\
 =(1+m(1-\gamma))w_{t-1}-m(1-\gamma)w_{t-2}-\eta(m\gamma)\nabla_tJ(\theta_t)
 $$
+
+
 这个本质还是一个滑动平均，但是我们可以看到这里相当于对所有参数都进行了弱化的过程。此时$(1-\gamma)+\gamma$变成了$m(1-\gamma)+m\gamma=m$，相当于加权参数变了，其实也变相相当于学习率的减弱。因此会出现这个trick。
+
+在实际实现的过程中，我们其实可以通过把$1-\gamma$赋值为$m(1-\gamma)$，注意到此时$\gamma$归一化为$1-m(1-\gamma)$，因此我们可以把学习率变为$\frac{\eta}{m\gamma}*(1-m(1-\gamma))$来实现。
+
+
 
 ## 一些关于时间序列的思考
 
