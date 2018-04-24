@@ -1,6 +1,6 @@
 ---
 layout: post
-title: R-FCN:Object Detection via Region-based Fully Convolutional Networks阅读笔记
+title: A tutorial on spectral clustering文献翻译
 date: 2018-04-24 20:10:00
 categories: 机器学习
 tags: Cluster
