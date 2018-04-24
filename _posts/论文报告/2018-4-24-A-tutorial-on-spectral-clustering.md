@@ -24,7 +24,7 @@ figure: /images/spectral-cluster/spectral_clustering_3.png
 
 
 
-+++++
+---
 
 ## Abstract
 
