@@ -1,4 +1,3 @@
-```
 ---
 layout: post
 title:  "概率论(1)"
@@ -8,5 +7,4 @@ tags: 概率论
 author: 朱正茂
 mathjax: true
 ---
-```
-
+# 概率论基础
