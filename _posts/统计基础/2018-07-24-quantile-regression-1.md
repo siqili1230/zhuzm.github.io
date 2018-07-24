@@ -44,7 +44,7 @@ $$
 
 证明：
 
-易知 $ \rho_\tau(x)\geq0 $ ，故当 $ \mathbb{E}_Y (\rho_\tau(Y-u)) $ 取到0时必为最小值，即
+易知 $ \rho_\tau(x)\geq0 $ ，故当 $ \mathbb{E}_Y (\rho_\tau (Y-u)) $ 取到0时必为最小值，即
 
 $$
 0=\mathbb{E}_Y (\rho_\tau(Y-u))=\tau \int_u^\infty (y-u)dF_Y(y)+(\tau-1)\int_{-\infty}^u(y-u)dF_Y(y)=F_Y(u)-\tau
