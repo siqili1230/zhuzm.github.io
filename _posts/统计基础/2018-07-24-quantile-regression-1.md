@@ -66,7 +66,7 @@ $$
 min_\beta \mathbb{E}_{(Y,X)}[(Y-X\beta)^2]
 $$
 
-均值估计就是 $ E(Y | X=x)=x\beta $ 
+均值估计就是 $ E(Y \| X=x)=x\beta $ 
 
 现在相应地，在分位数回归中，对于随机变量 $ Y $ ，求解公式为
 
@@ -80,7 +80,7 @@ $$
 min_\beta \mathbb{E}_{(Y,X)}[\rho_\tau(Y-X\beta)]
 $$
 
-分位数估计就是 $ Q_\tau(Y|X=x)=x\beta $ 。
+分位数估计就是 $ Q_\tau(Y \| X=x)=x\beta $ 。
 
 ---
 参考资料：
