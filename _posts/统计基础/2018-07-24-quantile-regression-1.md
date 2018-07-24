@@ -20,7 +20,7 @@ $$
 Y=f(X)+\epsilon
 $$
 
-均值回归求的是 $ E(Y|X=x) $ ，而分位数回归求的是
+均值回归求的是 $ E(Y | X=x) $ ，而分位数回归求的是
 
 $$
 Q_\tau(Y|X=x)=arg \ inf\{F_{Y|X=x}(y)\geq\tau\}
@@ -66,7 +66,7 @@ $$
 min_\beta \mathbb{E}_{(Y,X)}[(Y-X\beta)^2]
 $$
 
-均值估计就是 $ E(Y|X=x)=x\beta $ 
+均值估计就是 $ E(Y | X=x)=x\beta $ 
 
 现在相应地，在分位数回归中，对于随机变量 $ Y $ ，求解公式为
 
