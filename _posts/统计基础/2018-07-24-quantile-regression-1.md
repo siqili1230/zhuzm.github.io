@@ -20,7 +20,7 @@ $$
 Y=f(X)+\epsilon
 $$
 
-均值回归求的是 $ E(Y | X=x) $ ，而分位数回归求的是
+均值回归求的是 $ E(Y \vert X=x) $ ，而分位数回归求的是
 
 $$
 Q_\tau(Y|X=x)=arg \ inf\{F_{Y|X=x}(y)\geq\tau\}
