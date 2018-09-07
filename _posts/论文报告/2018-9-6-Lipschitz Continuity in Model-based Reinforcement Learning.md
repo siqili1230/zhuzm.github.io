@@ -1,10 +1,11 @@
+---
 layout: post
 title: Lipschitz Continuity in Model-based Reinforcement Learning阅读笔记
 date: 2018-09-6 22:11:00
 categories: 论文报告
 tags: ICML2018 theory model-based Lipschitz 
 mathjax: true
-
+---
 
 * content
 {:toc}
