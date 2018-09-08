@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Lipschitz Continuity in Model-based Reinforcement Learning阅读笔记
-date: 2018-09-6 22:11:00
-categories: 论文报告
-tags: ICML2018 theory model-based Lipschitz 
+date: 2018-9-6 22:11:00
+categories: 强化学习
+tags: ICML2018  强化学习理论 model-based Lipschitz 
 mathjax: true
 ---
 
@@ -15,6 +15,7 @@ mathjax: true
 ## 论文简介与笔记大纲
 
 本文的主要工作是给出了满足"Lipschitz连续"性质的模型中多步预测的误差界和值函数估计的误差界
+
 
 
 
