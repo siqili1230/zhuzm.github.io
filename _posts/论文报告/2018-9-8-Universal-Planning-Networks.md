@@ -23,7 +23,7 @@ mathjax: true
 ## 背景介绍
 抽象表示（abstract representation）是解决高维数据的一种重要方法。在强化学习中，我们经常遇到一些基于像素级图像信息输入的环境，比如atari上的游戏。我们希望通过抽象表示压缩数据的维度，并提取关键信息，从而降低计算量，实现更高效的学习。
 
-一般的，基于强化学习环境$<S,A,R,T,\gamma>$，我们希望能够得到一个状态抽象化函数 $f(s_t)=\hat{s}_t$ ，其中 $\hat{s}_t$ 是一个低维数据；同时得到抽象状态 $\hat{s}_t 的转移函数 \hat{T}(\hat{s}_{t+1} \| \hat{s}_t,a_t)$ 。这样，我们就可以在低维空间中使用强化学习的算法。
+一般的，基于强化学习环境$<S,A,R,T,\gamma>$，我们希望能够得到一个状态抽象化函数 $f(s_t)=\hat{s}_t$ ，其中 $\hat{s}_t$ 是一个低维数据；同时得到抽象状态 $\hat{s}\_t$ 的转移函数 $\hat{T}(\hat{s}\_{t+1})$ 。这样，我们就可以在低维空间中使用强化学习的算法。
 
 ## 算法内容
 
@@ -33,7 +33,7 @@ mathjax: true
 
 ![algo-1](\images\2018-9-8-Universal-Planning-Networks\2018-9-8-Universal-Planning-Networks-algo-1.png)
 
-第二部分是在固定GDP函数的情况下，优化抽象化函数$f_\phi$和抽象空间的转移函数$g_\theta$。训练过程为：输入一条专家轨迹，以专家的动作序列$a_{t:t+T}$和通过GDP跑出来的动作序列 $\hat{a}_{t:t+T}  的差值作为损失函数，同时优化 f_{\phi}$和$g_\theta$，具体算法如下：
+第二部分是在固定GDP函数的情况下，优化抽象化函数$f_\phi$和抽象空间的转移函数$g_\theta$。训练过程为：输入一条专家轨迹，以专家的动作序列$a_{t:t+T}$和通过GDP跑出来的动作序列 $\hat{a}\_{t:t+T}$ 的差值作为损失函数，同时优化 $f_\phi$和 $g_\theta$，具体算法如下：
 
 ![algo-2](\images\2018-9-8-Universal-Planning-Networks\2018-9-8-Universal-Planning-Networks-algo-2.png)
 
