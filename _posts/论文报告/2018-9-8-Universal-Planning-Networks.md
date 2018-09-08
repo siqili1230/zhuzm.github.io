@@ -52,7 +52,7 @@ f_\phi(o_t,o_g)=x_t ,\ \ g_\theta(x_t,h_{t-1})=h_t, \ \ m(h_t)=\hat{a}_t
 $$
 
 ### 比较实验
-![experience-1](\images\2018-9-8-Universal-Planning-Networks\2018-9-8-Universal-Planning-Networks-expe-1.png)
+![experience-1](\images\2018-9-8-Universal-Planning-Networks\2018-9-8-Universal-Planning-Networks-exp-1.png)
 
 ## 小结
 这篇文章是暑期研讨班陈雄辉同学所介绍的，因为最近在预测学习之余又在抽象表示上开展研究，所以近期关注了一些有关抽象表示的文章，希望能带来一些灵感（排掉一些错误方向）。
