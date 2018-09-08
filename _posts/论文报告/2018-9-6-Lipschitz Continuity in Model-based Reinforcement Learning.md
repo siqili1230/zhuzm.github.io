@@ -61,7 +61,7 @@ $P(y=0)=1/4, \ P(y=1)=1/2, \ P(y=2)=1/4$
 
 但这并不是最小的，最小的距离是$1/4*|1-0|+1/4*|0-0|+1/4*|1-1|+1/4*|2-2|=1/4$，映射关系为将$N/4$份$x=0$的样本点映射到$N/4$份$y=1$的样本点上，其余均为恒等映射(0到0，1到1，2到2)。
 
-###Lipschitz连续模型
+### Lipschitz连续模型
 
 ![2018-9-6-Lipschitz Continuity in Model-based Reinforcement Learning_lipschitz_model](/images/2018-9-6-Lipschitz Continuity in Model-based Reinforcement Learning/2018-9-6-Lipschitz Continuity in Model-based Reinforcement Learning_lipschitz_model.png)
 
