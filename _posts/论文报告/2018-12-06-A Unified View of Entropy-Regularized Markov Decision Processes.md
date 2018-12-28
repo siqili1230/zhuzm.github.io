@@ -70,6 +70,14 @@ $$\max_\mu \widetilde{\rho}(\mu)=\max_\mu [\rho(\mu)-\frac{1}{\eta}R(\mu)]$$
 则拉格朗日函数更改为
 ![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\equa_2.png)
 
+由于在最优点处满足KKT约束，故有
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\equa_3.png)
+这一步得到了在最优点处正则化子的梯度约束。
+
+另一方面，我们具体地引入两类正则化函数：
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\regularizer_s.png)
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\regularizer_c.png)
+
 ## 算法
 
 ## 实验
