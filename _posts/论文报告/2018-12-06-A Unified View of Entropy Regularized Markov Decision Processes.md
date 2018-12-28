@@ -83,6 +83,14 @@ $$\max_\mu \widetilde{\rho}(\mu)=\max_\mu [\rho(\mu)-\frac{1}{\eta}R(\mu)]$$
 ![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\regularizer_s.png)
 ![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\regularizer_c.png)
 
+同时计算两种熵的bregman divergence：
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\regularizer_s_1.png)
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\regularizer_c_1.png)
+
+其中Bregman散度的定义如下：
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\bregman_def.png)
+
+
 ## 算法
 
 ## 实验
