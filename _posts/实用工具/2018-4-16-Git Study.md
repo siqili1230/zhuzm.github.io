@@ -9,7 +9,7 @@ mathjax: true
 * content
 {:toc}
 
-# Git学习内容:多分支与回退版本
+# 【转载】Git学习内容:多分支与回退版本
 
 ## 学习目的
 
