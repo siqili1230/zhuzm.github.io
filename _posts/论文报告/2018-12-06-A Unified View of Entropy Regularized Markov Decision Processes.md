@@ -89,8 +89,71 @@ $$\max_\mu \widetilde{\rho}(\mu)=\max_\mu [\rho(\mu)-\frac{1}{\eta}R(\mu)]$$
 其中Bregman散度的定义如下：
 ![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\bregman_def.png)
 
+接下来我们基于正则化子$R_s,R_c$分别讨论：
+其中$$A(x,a)=r(x,a)+\sum_y P(y|x,a)V(y)-V(x)$$
+1. 先讨论$R_s$的情况。我们首先列出结论：
+    1. 最优分布$\mu^*_\eta$满足($A^*$对应$V^*$)：$$\mu^*_\eta(x,a) \varpropto \mu'(x,a)e^{\eta A^*_\eta(x,a)}$$
+    2. 对偶函数如下：
+    $$
+    g(V)=\frac{1}{\eta}\log\sum_{x,a}\mu'(x,a)e^{\eta A(x,a)}
+    $$
+2. 对于$R_s$的情况，有类似的结论:
+    1. 最优策略$\pi^*_\eta$满足：$$\pi^*_\eta(x,a) \varpropto \pi_{\mu'}(x,a)e^{\eta A^*_\eta(x,a)}$$
+    2. 对偶问题如下：
+    $$
+    \min_{\lambda \in \mathbb{R}} \\
+    subject \ to \ V(x)=\frac{1}{\eta}\log\sum_{x,a}\pi_{\mu'}(x,a)\exp(\eta(r(x,a)-\lambda+\sum_y P(y|x,a)V(y)))
+    $$
 
+因为这一步我在看附录的证明时遇到了问题过不去，所以此处特地列出我的困惑之处。
+以$R_s$的对偶函数证明为例：
+首先基于$R_s$的定义求梯度，有：
+$$
+\frac{\partial R(\mu)}{\partial\mu(x,a)}=\log\frac{\mu(x,a)}{\mu'(x,a)}+1
+$$
+结合上面求过的最优点处的梯度约束：
+$$
+\frac{\partial R(\mu)}{\partial\mu(x,a)}|_{\mu^*(x,a)}=\eta(A(x,a)-\lambda+\varphi(x,a))
+$$
+因此
+$$
+\mu^*_\eta(x,a)=\mu'(x,a)\exp(\eta(A(x,a)-\lambda+\varphi(x,a))-1)
+$$
+同时有KKT的约束，有：
+$$
+1=\sum_{x,a}\mu^*(x,a)
+=\sum_{x,a}\mu'(x,a)\exp(\eta(A(x,a)-\lambda+\varphi(x,a))-1) \\
+\lambda=\frac{1}{\eta}(\log\sum_{x,a}\mu'(x,a) \exp(\eta A(x,a))-1) \\
+$$
+将上式的$\lambda$代入拉格朗日函数可得：
+$$
+\begin{aligned}
+\mathcal{L}(\mu^*_\eta;V,\lambda)&=\sum_{x,a}\mu^*_\eta(x,a)(A(x,a)-\lambda-\frac{1}{\eta}\log\frac{\mu^*_\eta(x,a)}{\mu'(x,a)})+\lambda \\
+&=\frac{1}{\eta}+\lambda \ \ \ (*)\\
+&=\frac{1}{\eta}\log\sum_{x,a}\mu'(x,a)\exp(\eta A(x,a))
+\end{aligned}
+$$
+打星号$*$所在行的等号存疑。因为
+$$
+\begin{aligned}
+&\sum_{x,a}\mu^*_\eta(x,a)(A(x,a)-\lambda-\frac{1}{\eta}\log\frac{\mu^*_\eta(x,a)}{\mu'(x,a)})+\lambda \\
+=&\sum_{x,a}\mu^*_\eta(x,a)A(x,a)-\sum_{x,a}\mu^*_\eta(x,a)(\frac{1}{\eta}\log(\frac{\mu^*_\eta(x,a)}{\mu'_\eta(x,a)}\sum_{x',a'}\exp(\eta A(x',a'))))+\frac{1}{\eta}+\lambda \\
+\end{aligned}
+$$
+若要证明上式等于$\frac{1}{\eta}+\lambda$，由于最优点$\mu^*_\eta$的任意性，可以通过证明
+$$
+\exp(\eta A(x,a))=\frac{\mu^*_\eta(x,a)}{\mu'_\eta(x,a)}\sum_{x',a'}\exp(\eta A(x',a')) \ \ \forall (x,a)
+$$
+但（我认为）上式显然不成立，或者说容易构造反例。
+在$R_c$的证明中也有类似的困惑，此处不再赘述。
 ## 算法
+此处我们考虑两类基于$\mu$的迭代算法：Mirror Decent 和 Dual Averaging。
+### Mirror Decent
+$$
+\mu_{k+1}=\arg\max \{\rho(\mu)-\frac{1}{\eta}D_R(\mu || \mu_k)\}
+$$
+Mirror Decent的做法是固定$\eta$然后每次基于旧的$\mu_k$寻找一个最佳的$\mu_{k+1}$
+下面将说明TRPO其实是这一类算法的变体。
 
 ## 实验
 
