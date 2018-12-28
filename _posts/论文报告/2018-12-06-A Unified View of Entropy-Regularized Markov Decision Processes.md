@@ -12,8 +12,7 @@ mathjax: true
 * content
 {:toc}
 
-论文题目: [A Unified View of Entropy-Regularized
-Markov Decision Processes](https://arxiv.org/pdf/1705.07798.pdf)
+论文题目: [A Unified View of Entropy-Regularized Markov Decision Processes](https://arxiv.org/pdf/1705.07798.pdf)
 
 ## 简介
 
