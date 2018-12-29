@@ -225,6 +225,45 @@ TRPO算法的优化目标是：
 
 ![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\trpo_2.png)
 
+进行比较可以发现两者的差别在于采用了旧的状态分布$\nu_{old}(x)$还是新的状态分布$\nu_\mu(x)$
+
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\trpo_3.png)
+
+作者认为TRPO “completely equivalent to” MDP-E 算法，因此TRPO也一样收敛到最优策略，同时这个结论强于TRPO原文中讲到的（由策略回报的单调递增性引导出的）收敛性，后者可能收敛到局部最优。
+
+但此处我是存有疑问的，因为收敛性的严格证明不能容许有无端的近似处理，因此这里的证明并不严格。
+
+### Dual Averaging
+
+$$
+\mu_{k+1}=\arg\max\{\rho(\mu)-\frac{1}{\eta_k}R(\mu)\}
+$$
+
+Dual Averaging的做法是每次调整$\eta_k$然后寻找一个最佳的$\mu_{k+1}$，这里$\eta_k$一般是递增的。
+
+下面将说明[A3C](http://proceedings.mlr.press/v48/mniha16.pdf)算法其实是这一类算法的变体。
+
+首先回顾A3C的优化目标：
+
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\a3c_1.png)
+
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\a3c_2.png)
+
+类似地，可以看到两者的差别在于采用了旧的状态分布$\nu_{old}(x)$还是新的状态分布$\nu_\mu(x)$
+
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\a3c_3.png)
+
+但并不能类似地证明收敛性，因为Dual Averaging本身也不能证明全局收敛性，主要是因为目标函数每一轮都在变$(\eta_k)$，所以甚至不能保证局部收敛性。
+
 ## 实验
 
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\expe_1.png)
+
+实验结果表明，$\eta$太大时会有过拟合现象，陷入局部最优点；太小时会欠拟合，策略趋向于随机。
+
+另一方面，黄色曲线(Regularized VI)说明了$\eta$不能取常量。
+
 ## 小结
+
+1. 这篇文章号称证明了TRPO（比原文更强的）收敛性，但就我的理解而言，这篇文章的证明并不完善，一是对偶函数的推演不严谨（或者说我没看懂），二是说明TRPO与mirror descent有相同的收敛性时做了近似处理，但这个近似很可能破坏收敛性，而文章作者并未对此做任何说明，或其他相关的佐证。
+2. 但总的来，这篇文章还是给出了一个不错的视角，来帮助读者从数学上更好地理解现在主流的强化学习算法(TRPO、A3C)。目前我对于这篇文章还有很多数学上的困惑，包括只能单纯地读懂大部分证明，而不能高屋建瓴地总结文章的思路和视角，所以还没有真正地读懂文章，希望之后能抽出时间好好补习一下强化学习的数学基础。
