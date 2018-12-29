@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Unifide View of Entropy-Regularized Markov Decision Processes阅读笔记
+title: A Unifide View of Entropy-Regularized Markov Decision Processes 阅读笔记
 date: 2018-12-06 22:11:00
 categories: 强化学习
 tags: NIPS2018 强化学习理论 收敛性

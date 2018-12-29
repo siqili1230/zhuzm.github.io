@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Universal Planning Networks阅读笔记
+title: Universal Planning Networks 阅读笔记
 date: 2018-09-08 22:11:00
 categories: 强化学习
 tags: ICML2018 状态抽象
