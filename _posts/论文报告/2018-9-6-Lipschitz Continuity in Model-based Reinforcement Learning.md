@@ -10,9 +10,10 @@ mathjax: true
 * content
 {:toc}
 
+
 论文题目: [Lipschitz Continuity in Model-based Reinforcement Learning](http://proceedings.mlr.press/v80/asadi18a/asadi18a.pdf)
 
-## 论文简介与笔记大纲
+## 简介
 
 本文的主要工作是给出了满足"Lipschitz连续"性质的模型中多步预测的误差界和值函数估计的误差界。
 
@@ -21,11 +22,7 @@ mathjax: true
 
 
 
-
-
-
-
-## 基础概念 
+## 基础概念
 ### 基于模型的强化学习(model-based RL)
 RL问题一般都从马尔科夫决策过程视角来看待，以五元组$<S,A,R,T,\gamma>$表示一个RL系统，而基于模型的强化学习方法就是估计
 $$
