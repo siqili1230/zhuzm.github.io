@@ -153,7 +153,12 @@ $$
 \mu_{k+1}=\arg\max \{\rho(\mu)-\frac{1}{\eta}D_R(\mu || \mu_k)\}
 $$
 Mirror Decent的做法是固定$\eta$然后每次基于旧的$\mu_k$寻找一个最佳的$\mu_{k+1}$
-下面将说明TRPO其实是这一类算法的变体。
+下面将说明[TRPO](https://arxiv.org/abs/1502.05477v4)算法其实是这一类算法的变体。
+TRPO算法的优化目标是：
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\trpo_1.png)
+
+将约束项写成罚函数形式可得：
+![](\images\2018-12-06-A Unified View of Entropy-Regularized Markov Decision Processes\trpo_2.png)
 
 ## 实验
 
