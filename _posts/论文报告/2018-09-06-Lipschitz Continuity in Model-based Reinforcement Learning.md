@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Lipschitz Continuity in Model-based Reinforcement Learning阅读笔记test
-date: 2018-9-6 22:11:00
+title: Lipschitz Continuity in Model-based Reinforcement Learning阅读笔记
+date: 2018-09-06 22:11:00
 categories: 强化学习
-tags: ICML2018  强化学习理论 model-based Lipschitz 
+tags: ICML2018  强化学习理论 model-based Lipschitz
 mathjax: true
+
 ---
 
 * content
 {:toc}
-
 
 论文题目: [Lipschitz Continuity in Model-based Reinforcement Learning](http://proceedings.mlr.press/v80/asadi18a/asadi18a.pdf)
 
