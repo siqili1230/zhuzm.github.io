@@ -74,7 +74,18 @@ $$
 
 DM的优点：方差小，偏差小。
 
-但考虑到采样数据来自于$\pi_b$，所以我们不知道$\pi_e$下真实的Q值$Q^{\pi_e}$，因此引入重要性采样比$\omega_{t_1:t_2}=\Pi_{\tau=t_1}^{t_2}\frac{\pi_e(a_\tau|x_\tau)}{\pi_b(a_\tau|x_\tau)}$，不过由于我们不知道$\pi_b$，所以还需要用$\hat{\omega}_{t_1:t_2}=\Pi_{\tau=t_1}^{t_2}\frac{\pi_e(a_\tau|x_\tau)}{\hat{\pi}_b(a_\tau|x_\tau)}$来代替，其中$\hat{\pi}_b$也是基于采样数据计算期望得到。
+但考虑到采样数据来自于$\pi_b$，所以我们不知道$\pi_e$下真实的Q值$Q^{\pi_e}$，因此引入重要性采样比
+
+$$
+\omega_{t_1:t_2}=\Pi_{\tau=t_1}^{t_2}\frac{\pi_e(a_\tau|x_\tau)}{\pi_b(a_\tau|x_\tau)}
+$$
+
+不过由于我们不知道$\pi_b$，所以还需要用
+$$
+\hat{\omega}_{t_1:t_2}=\Pi_{\tau=t_1}^{t_2}\frac{\pi_e(a_\tau|x_\tau)}{\hat{\pi}_b(a_\tau|x_\tau)}
+$$
+
+来代替，其中$\hat{\pi}_b$也是基于采样数据计算期望得到。
 
 引入重要性采样比后，我们有
 
@@ -137,7 +148,12 @@ $$
 
 （方法同上，也是显然的。）
 
-其中$\delta_{0:t}(\xi)=1-\lambda_{0:t}(\xi)=1-\Pi_{\tau=0}^t\frac{\pi_b(a_\tau|x_\tau)}{\hat{\pi}_b(a_\tau|x_\tau)}$，$\hat{\pi}_b$是估计值。
+其中
+$$
+\delta_{0:t}(\xi)=1-\lambda_{0:t}(\xi)=1-\Pi_{\tau=0}^t\frac{\pi_b(a_\tau|x_\tau)}{\hat{\pi}_b(a_\tau|x_\tau)}
+$$
+
+$\hat{\pi}_b$是估计值。
 
 上面两种方法虽然具有无偏性的好性质，但方差也是惊人的，同时方差还会随着$T$指数级增长。所以在实际应用中，可以暂时放松对无偏性的要求，下面是一种有偏、但方差远小于前面两者的估计方法——对权重进行归一化：
 
