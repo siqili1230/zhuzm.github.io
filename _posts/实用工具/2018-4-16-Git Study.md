@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git 学习笔记
+title: 【转载】Git 学习笔记
 date: 2018-04-16 13:49:00
 categories: 实用工具
 tags: Git
@@ -9,7 +9,7 @@ mathjax: true
 * content
 {:toc}
 
-# 【转载】Git学习内容:多分支与回退版本
+# Git学习内容:多分支与回退版本
 
 ## 学习目的
 
