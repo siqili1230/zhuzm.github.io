@@ -24,7 +24,22 @@ mathjax: true
 
 ## 背景
 
-对于一条轨迹$\xi=(x_0,a_0,r_0,\cdots,x_{T-1},r_{T-1},x_T)$，定义累计回报$R_{0:T-1}(\xi)=\sum_{t=0}^{T-1}\gamma^tr_t$，其中$x_0 \sim P_0,\ a_t \sim \pi(\cdot|x_t),\ x_{t+1}\sim P(\cdot|x_t,a_t), \ r_t \sim P_r(\cdot|x_t,a_t)$，将上面的分布一起定义为$P^\pi_\xi$，有
+对于一条轨迹
+
+$$
+\xi=(x_0,a_0,r_0,\cdots,x_{T-1},r_{T-1},x_T)
+$$
+
+定义累计回报$R_{0:T-1}(\xi)=\sum_{t=0}^{T-1}\gamma^tr_t$，其中
+
+$$
+x_0 \sim P_0 \\
+a_t \sim \pi(\cdot|x_t) \\
+x_{t+1}\sim P(\cdot|x_t,a_t) \\
+r_t \sim P_r(\cdot|x_t,a_t)
+$$
+
+将上面的分布一起定义为$P^\pi_\xi$，有
 
 $\rho_T^\pi = \mathbb{E}_{\xi \sim P^\pi_\xi}[R_{0:T-1}(\xi)]$
 
