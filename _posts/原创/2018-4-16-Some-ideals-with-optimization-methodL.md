@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一个对优化算法等价于滑动平均的思考
+title: 【转载】一个对优化算法等价于滑动平均的思考
 date: 2018-04-16 22:43:00
 categories: 深度学习
 tags: optimization
@@ -9,7 +9,7 @@ mathjax: true
 
 * content
 {:toc}
-# 【转载】题目：一个关于优化算法等价于时间序列的思考
+# 题目：一个关于优化算法等价于时间序列的思考
 
 **FengHZ‘s Blog首发原创**
 
