@@ -34,7 +34,10 @@ $$
 Z^\pi(x,a)=\sum_{t=0}^{\infty}\gamma^tR(x_t,a_t)
 $$
 
-其中$x_t \sim P(\cdot|x_{t-1},a_{t-1}), \ a_t \sim \pi(\cdot|x_t)$，$Z$的随机性也来自于转移函数$P$，随机策略$\pi$（即轨迹的随机性）和回报函数$R$。状态动作值函数则定义为$Q^\pi(x,a)=\mathbb{E}[Z^\pi(x,a)]$，那么一般的bellman equation就是：
+其中$x_t \sim P(\cdot|x_{t-1},a_{t-1}), \ a_t \sim \pi(\cdot|x_t)$，
+$Z$的随机性也来自于转移函数$P$，随机策略$\pi$（即轨迹的随机性）和回报函数$R$。
+状态动作值函数则定义为$Q^\pi(x,a)=\mathbb{E}[Z^\pi(x,a)]$，
+那么一般的bellman equation就是：
 
 $$
 Q(x,a)=\mathbb{E}R(x,a)+\gamma \mathbb{E}Q(X',A')
@@ -63,7 +66,7 @@ $$
 
 接下来关于算子/映射$\mathcal{T}^\pi$有一个重要性质：
 
-引理：在$\bar{d}_p$空间中，$\mathcal{T}^\pi:\mathcal{Z}\to \mathcal{Z} $是一个$\gamma$-压缩映射。
+    引理：在$\bar{d}_p$空间中，$\mathcal{T}^\pi:\mathcal{Z}\to \mathcal{Z} $是一个$\gamma$-压缩映射。
 
 由Banach不动点定理，$\mathcal{T}^\pi$必有唯一不动点，又由于$\mathcal{Z}^\pi$满足不动点条件，所以$\mathcal{Z}^\pi$就是那个唯一不动点。
 
