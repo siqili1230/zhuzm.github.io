@@ -66,7 +66,7 @@ $$
 
 接下来关于算子/映射$\mathcal{T}^\pi$有一个重要性质：
 
-    引理：在$\bar{d}_p$空间中，$\mathcal{T}^\pi:\mathcal{Z}\to \mathcal{Z} $是一个$\gamma$-压缩映射。
+引理：在$\bar{d}_p$空间中，$\mathcal{T}^\pi:\mathcal{Z}\to \mathcal{Z} $是一个$\gamma$-压缩映射。
 
 由Banach不动点定理，$\mathcal{T}^\pi$必有唯一不动点，又由于$\mathcal{Z}^\pi$满足不动点条件，所以$\mathcal{Z}^\pi$就是那个唯一不动点。
 
