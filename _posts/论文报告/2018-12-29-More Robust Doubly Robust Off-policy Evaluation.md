@@ -188,23 +188,23 @@ MRDR的主要创新是提出通过最小化DR estimator的方差来优化参数$
 这里假设$\pi_b$是已知的，且IS和DR是无偏的，那么MRDR也是无偏的，同时由于MRDR是最小化方差，所以也是最小的MSE（在DR 的解空间中）。
 以单步的Contextual Bandit为例。
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\1.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\1.png)
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\2.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\2.png)
 
 当$\pi_b$已知时，方差还可以写成下式
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\4.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\4.png)
 
 但这个式子里包含了$\Delta$，也就是包含了真实的$Q$，而其不可求，故该表达式不可行。
 
 我们还可以把方差按下式表述，其优点在于消去了$\Delta$，那么就可以算出关于$\beta$的偏导了。
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\3.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\3.png)
 
 同时从（11）可以看出这是关于$\pi_b$的期望，因此可以用SAA代替期望：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\5.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\5.png)
 
 其中$\Omega_{\pi_b}(x)=\mathrm{diag}[1/\pi_b(a|x)]_{a \in \mathcal{A}}-ee^T$是一个半正定矩阵，
 $$e=[1,\cdots,1]^T \\
@@ -215,21 +215,21 @@ $$
 
 在更为一般的强化学习环境中，有：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\6.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\6.png)
 
 去掉与$\beta$无关的项之后：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\7.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\7.png)
 
 同样可以写成SAA的形式：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\8.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\8.png)
 
 ## 实验
 
 实验设计如下：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\expe_1.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\expe_1.png)
 
 中文版：令动作空间为$\{1,2,\cdots,l\}$，$\mu\in[-0.5,0.5]$，实验设置了三种类型的随机采样策略$\pi_b$：
 1. 第一种策略是友好型策略，当选中的动作为$a$时，$\pi_{\alpha,\beta}(x)$会以概率$\alpha+\beta\times \mu$返回$a$，以概率$\frac{1-(\alpha+\beta\times \mu)}{l-1}$均匀随机地返回$\{1,2,\cdots,l\}/\{a\}$中的一个数。
@@ -238,13 +238,13 @@ $$
 
 具体的策略设计如下，待估策略$\pi_e$也在其中（应该是友好型的策略）：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\expe_2.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\expe_2.png)
 
 
 
 对DR和MRDR的方差采用95%显著性检验，加粗表示通过检验（DR0指代采用DM训练好的$Q(x,a)$，再用DR方法算$\beta$）：
 
-![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\expe_3.png)
+![](\images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\expe_3.png)
 
 ## 小结
 
