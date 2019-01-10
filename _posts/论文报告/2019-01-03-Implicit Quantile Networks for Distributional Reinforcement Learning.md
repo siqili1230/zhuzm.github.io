@@ -132,7 +132,7 @@ $$
 
 虽然收敛速度很美好，但目前还是有三个巨大的困难：
 1. 算子$\mathcal{T}$不是一个压缩映射。
-2. 不是所有的最优算子都有固定点$Z^* $使得$Z^*=\mathcal{T}Z^*$
+2. 不是所有的最优算子都有固定点$Z^* $使得$Z^* =\mathcal{T}Z^*$
 3. 即使最优算子有固定点$Z^* $，也不足以保证$\{Z_k\}$能收敛到$\mathcal{Z}^*$。（与前面的$\mathbb{E}Z$的收敛性质并不矛盾，这里指的是分布的收敛。）
 
 ### 基于值分布$Z(x,a)$的初代算法
@@ -168,6 +168,8 @@ $$
 算法的伪代码如下：
 
 ![](images\2019-01-03-Implicit Quantile Networks for Distributional Reinforcement Learning\algo_1.png)
+
+![](images\2018-12-29-More Robust Doubly Robust Off-policy Evaluation\1.png)
 
 ### 小结
 
