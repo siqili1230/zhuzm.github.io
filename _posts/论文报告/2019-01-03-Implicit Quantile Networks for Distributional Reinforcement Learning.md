@@ -167,8 +167,7 @@ $$
 
 算法的伪代码如下：
 
-![algo_1](images\2019-01-03-Implicit Quantile Networks for Distributional Reinforcement Learning\algo_1.png)
-
+![algo-1](images\2019-01-03-Implicit Quantile Networks for Distributional Reinforcement Learning\algo_1.png)
 
 ### 小结
 
