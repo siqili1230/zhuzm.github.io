@@ -26,7 +26,8 @@ mathjax: true
 
 $P(\xi=k)=C_n^k p^k(1-p)^{n-k}$
 
-$\xi$可以理解为$n$次两点分布试验中出现$\xi=x_1$的次数。记$\xi \sim B(n,p)$，$b(k;n,p)\overset{\Delta}=P(\xi=k|n,p)$。
+$\xi$可以理解为$n$次两点分布试验中出现$\xi=x_1$的次数。
+记$\xi \sim B(n,p)$，$b(k;n,p)\overset{\Delta}=P(\xi=k|n,p)$。
 
 性质：
 1. $b(k;n,p)=b(n-k;n,1-p)$
