@@ -9,6 +9,12 @@ mathjax: true
 
 ---
 # 第二章 随机变量与分布函数
+
+
+
+
+
+
 ---
 ## 离散随机变量及分布
 
@@ -20,7 +26,7 @@ mathjax: true
 
 $P(\xi=k)=C_n^k p^k(1-p)^{n-k}$
 
-$\xi$可以理解为$n$次两点分布试验中出现$\xi=x_1$的次数。记$\xi \sim B(n,p), \ b(k;n,p)\overset{\Delta}=P(\xi=k|n,p)$。
+$\xi$可以理解为$n$次两点分布试验中出现$\xi=x_1$的次数。记$\xi \sim B(n,p)$，$b(k;n,p)\overset{\Delta}=P(\xi=k|n,p)$。
 
 性质：
 1. $b(k;n,p)=b(n-k;n,1-p)$
@@ -69,6 +75,7 @@ $$
 $$
 \frac{C_M^kC_{N-M}^{n-k}}{C_n^k} \to C_n^k p^k(1-p)^{n-k}
 $$
+
 
 ---
 ## 连续随机变量及分布
