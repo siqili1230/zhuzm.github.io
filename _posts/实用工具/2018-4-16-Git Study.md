@@ -2,7 +2,7 @@
 layout: post
 title: 【转载】Git 学习笔记
 date: 2018-04-16 13:49:00
-categories: 实用工具
+categories: 经验分享
 tags: Git
 mathjax: true
 ---
