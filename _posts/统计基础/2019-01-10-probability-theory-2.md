@@ -6,8 +6,11 @@ categories: 统计基础
 tags: 概率论
 author: 朱正茂
 mathjax: true
-
 ---
+* content
+{:toc}
+
+
 # 第二章 随机变量与分布函数
 
 
