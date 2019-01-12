@@ -42,7 +42,7 @@ $$
 W_1(Z,Z_\theta)=\sum_{i=1}^N\int_{\tau_{i-1}}^{\tau_i}|F_{Z}^{-1}(\omega)-\theta_i|d\omega
 $$
 
-容易解得$\theta_i=F_Z^{-1}(\hat{\tau}_i)=F_Z^{-1}(\frac{\tau_{i-1}+\tau_i}{2})$。
+容易解得$\theta_i = F_ Z ^{-1}(\hat{\tau}_i) = F_Z^{-1}(\frac{\tau_{i-1}+\tau_i}{2})$。
 
 下图给出简单的样例。
 
