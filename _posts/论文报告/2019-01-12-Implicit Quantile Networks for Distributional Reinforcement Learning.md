@@ -45,7 +45,7 @@ $$
 容易解得
 
 $$
-\theta_i = F_ Z ^{-1}(\hat{\tau}_i) = F_Z^{-1}(\frac{\tau_{i-1}+\tau_i}{2})
+\theta_i = F_ Z ^{-1}(\hat{\tau}_i) = F_ Z^{-1}(\frac{\tau_{i-1}+\tau_i}{2})
 $$
 
 下图给出简单的样例。
