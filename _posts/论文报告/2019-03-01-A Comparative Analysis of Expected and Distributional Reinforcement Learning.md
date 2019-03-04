@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A Comparative Analysis of Expected and Distributional Reinforcement Learning 阅读笔记（二）
+title: A Comparative Analysis of Expected and Distributional Reinforcement Learning 阅读笔记
 date: 2019-03-01 14:37:00
 categories: 强化学习
 tags: Distributional-RL 强化学习理论 AAAI2019
