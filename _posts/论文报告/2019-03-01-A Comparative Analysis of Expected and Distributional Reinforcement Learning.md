@@ -72,7 +72,7 @@ $$
 
 ![](\images\2019-03-01-A Comparative Analysis of Expected and Distributional Reinforcement Learning\cramer_1.png)
 
-## Cramer投射
+#### **Cramer 投射**
 
 为了解决迭代过程中支撑集变化的问题，即$Z_{i+1}(x,a)$与$Z_i(x,a)$的支撑集不一致，提出了Cramer Projection方法:
 
@@ -86,7 +86,7 @@ $$
 
 即关于期望运算不变。
 
-## 期望等价性(expectation-equivalent)
+#### **期望等价性**
 
 ![](\images\2019-03-01-A Comparative Analysis of Expected and Distributional Reinforcement Learning\update_1.png)
 
