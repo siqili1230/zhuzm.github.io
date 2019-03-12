@@ -260,5 +260,3 @@ p_{\eta|\xi}(y|x)=\frac{p_{\xi|\eta}(x|y)p_\eta(y)}{\int_{-\infty}^\infty p_{\xi
 $$
 
 上面的定理可以将随机变量$x,y$拓宽到$n$维随机向量的情况。
-
-
