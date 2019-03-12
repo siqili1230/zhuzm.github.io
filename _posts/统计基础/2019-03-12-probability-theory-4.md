@@ -23,13 +23,18 @@ mathjax: true
 
 **定义**
 
-对于离散型随机变量，当$\sum_{k=1}^\infty x_kp_k$绝对可和，即$\sum_{k=1}^\infty |x_k|p_k<\infty$时，数学期望 $\mathbb{E}X=\sum_{k=1}^\infty x_kp_k$。
+对于离散型随机变量，当$\sum_{k=1}^\infty x_kp_k$绝对可和
 
-对于连续型随机变量，当$\int_{-\infty}^\infty xp(x)dx$绝对可积，即$\int_{-\infty}^\infty |x|p(x)dx<\infty$时，数学期望 $\mathbb{E}X=\int_{-\infty}^\infty xp(x)dx$。
+即$\sum_{k=1}^\infty |x_k|p_k<\infty$时，数学期望 $\mathbb{E}X=\sum_{k=1}^\infty x_kp_k$。
+
+对于连续型随机变量，当$\int_{-\infty}^\infty xp(x)dx$绝对可积
+
+即$\int_{-\infty}^\infty |x|p(x)dx<\infty$时，数学期望 $\mathbb{E}X=\int_{-\infty}^\infty xp(x)dx$。
 
 **性质**
 
 $f:R\to R$ 为实值可测函数，则有
+
 $\mathbb{E}(f(X))=\int_{-\infty}^\infty f(x)p(x)dx$ 
 
 $E[(X,Y)]=(EX,EY)$
