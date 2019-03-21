@@ -198,9 +198,102 @@ $$
 f_Z(t)=f_X(t)\cdot f_Y(t)
 $$
 
-**二元随机变量的特征函数**
+**多元随机变量的特征函数**
 
-假设$(X,Y)$是二元随机向量
+随机向量$\mathbf{\xi}=(\xi_1,\cdots,\xi_n)^T$的特征函数为
+
+$$
+f(t_1,\cdots,t_n)=Ee^{i(t_1\xi_1+\cdots+t_n\xi_n)}
+$$
+
+一些基本性质：
+
+1. $\eta=a_1\xi_1+\cdots+a_n\xi_n$的特征函数为
+
+$$
+\begin{aligned}
+f_\eta(t)&=Ee^{it\sum_{k=1}^na_k\xi_k} \\
+&=f(a_1t,\cdots,a_nt)
+\end{aligned}
+$$
+
+2. $k$维子向量$(\xi_{l_1},\cdots,\xi_{l_k})$的特征函数为
+
+$$
+f(0,\cdots,0,t_{l_1},0,\cdots,0,\xi_{l_k},0,\cdots,0)
+$$
+
+3. 假设$L$是$m\times n$ 矩阵，$a=(a_1,\cdots,a_m)^T$，$\eta=L\xi+a$，那么
+
+$$
+f_\eta(t)=f_\xi(L^Tt)e^{it^Ta}
+$$
+
+对于性质三，我们以二元正态随机向量举例说明。
+
+假设$(X,Y)$是二元随机向量，那么特征函数为二元函数
+
+$$
+f_{(X,Y)}(t_1,t_2)=Ee^{i(t_1X+t_2Y)}
+$$
+
+当$X,Y$独立时，有
+
+$$
+f_{(X,Y)}(t_1,t_2)=f_X(t_1)f_Y(t_2)
+$$
+
+当$X,Y$不独立时，不妨设$(X,Y)\sim N(0,1;0,1;\rho)$，令
+
+$$
+\Sigma=
+\Big(
+\begin{matrix}
+1&\rho\\
+\rho&1
+\end{matrix}
+\Big)
+$$
+
+作线性变换：
+
+$$
+\Big(
+\begin{matrix}
+U\\
+V
+\end{matrix}
+\Big)=\Sigma^{-\frac{1}{2}}
+\Big(\begin{matrix}
+X \\
+Y
+\end{matrix}\Big)
+$$
+
+从而有$(U,V)\sim N(0,1;0,1;0)$，即相互独立。
+
+因此有
+
+$$
+\begin{aligned}
+f_{(U,V)}(t_1,t_2)&=Ee^{i(t_1,t_2)(U,V)^T}\\
+&=e^{-\frac{1}{2}(t_1^2+t_2^2)}\\
+&=e^{-\frac{1}{2}(t_1,t_2)(t_1,t_2)^T}
+\end{aligned}
+$$
+
+所以
+
+$$
+\begin{aligned}
+f_{(X,Y)}(t_1,t_2)&=Ee^{i(t_1,t_2)(X,Y)^T}\\
+&=Ee^{i\big[(t_1,t_2)\Sigma^{\frac{1}{2}}\big](U,V)^T}\\
+&=e^{-\frac{1}{2}\big[(t_1,t_2)\Sigma^{\frac{1}{2}}\big]\big[(t_1,t_2)\Sigma^{\frac{1}{2}}\big]^T}\\
+&=e^{-\frac{1}{2}(t_1,t_2)\Sigma(t_1,t_2)^T}\\
+&=f_{(U,V)}(\Sigma^{\frac{1}{2}T}(t_1,t_2)^T)
+\end{aligned}
+$$
+
 
 
 
