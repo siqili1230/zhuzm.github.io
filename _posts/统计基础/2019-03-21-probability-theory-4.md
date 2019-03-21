@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "概率论(4)"
-date:   2019-03-12 14:00:00 +0800
+date:   2019-03-21 14:00:00 +0800
 categories: 统计基础
 tags: 概率论
 author: 朱正茂
