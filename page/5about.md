@@ -15,7 +15,7 @@ type: page
 Mathematics & Statistics, Bachelor, Zhejiang University (2014-2018)
 
 Deep Learning, Machine Learning & Reinforcement Learning
-M.Sc. Student, LAMDA Group,Nanjing University, (2018-)
+M.Sc. Student, LAMDA Group, Nanjing University (2018-)
 
 ### 兴趣
 
