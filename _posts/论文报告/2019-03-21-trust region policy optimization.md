@@ -81,23 +81,44 @@ $$
 \end{aligned}
 $$
 
-我们对$(1)$进行重排，以$(s_t,a_t)$的出现概率为求和单元，不难得到
+我们对$(1)$进行重排，之前$(1)$时是以一条完整轨迹为求和单位，现在以任意一个状态动作元组$(s_t,a_t)$为求和单元，不难得到
 
 $$
-\eta(\tilde{\pi})=\eta(\pi)+\sum_{s}\rho_{\tilde{\pi}}(s)\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a)
+\eta(\tilde{\pi})=\eta(\pi)+\sum_{s}\rho_{\tilde{\pi}}(s)\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a)\tag{2}
 $$
 
 证明：
 
 $$
 \begin{aligned}
-\eta(\tilde{\pi})&=\eta(\pi)+\sum_{t=0}^\infty\sum_{s,a}P_{\tilde{\pi}}(s_t=s,a_t=a)\gamma^tA_\pi(s_t=s,a_t=a)\\
-&=\eta(\pi)+\sum_{t=0}^\infty\sum_{s,a}P_{\tilde{\pi}}(s_t=s)\tilde{\pi}(a\vert s)\gamma^tA_\pi(s,a)\\
-&=\eta(\pi)+\sum_{t=0}^\infty\sum_{s}P_{\tilde{\pi}}(s_t=s)\sum_a\tilde{\pi}(a\vert s)\gamma^tA_\pi(s,a)\\
-&=\eta(\pi)+\sum_{s}\sum_{t=0}^\infty P_{\tilde{\pi}}(s_t=s)\gamma^t\sum_a\tilde{\pi}(a\vert s)A_\pi(s,a)\\
-&=\eta(\pi)+\sum_{s}\rho_{\tilde{\pi}}(s)\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a)
+\eta(\tilde{\pi})&=\eta(\pi)+\sum_{t=0}^\infty\sum_{s,a}P(s_t=s,a_t=a\vert {\tilde{\pi}})\gamma^tA_\pi(s_t=s,a_t=a)\\
+&=\eta(\pi)+\sum_{t=0}^\infty\sum_{s,a}P(s_t=s\vert {\tilde{\pi}})\tilde{\pi}(a\vert s)\gamma^tA_\pi(s,a)\\
+&=\eta(\pi)+\sum_{t=0}^\infty\sum_{s}P(s_t=s\vert {\tilde{\pi}})\sum_a\tilde{\pi}(a\vert s)\gamma^tA_\pi(s,a)\\
+&=\eta(\pi)+\sum_{s}\sum_{t=0}^\infty P(s_t=s\vert {\tilde{\pi}})\gamma^t\sum_a\tilde{\pi}(a\vert s)A_\pi(s,a)\\
+&=\eta(\pi)+\sum_{s}\rho_{\tilde{\pi}}(s)\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a) 
 \end{aligned}
 $$
+
+在$(2)$的基础上，我们可以发现，只要对任意的$s$，都有$\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a) \geq 0$，就可以保证$\eta(\tilde{\pi})\geq\eta(\pi)$，也就是实现了策略更新时，回报递增。这个结论同时也说明了贪心的策略迭代方法$\tilde{\pi}(s)=\arg\max_a A_\pi(s,a)$，由于
+
+$$
+\begin{aligned}
+\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a) &=1\cdot A_\pi(s,\tilde{\pi}(s))\\
+&=\max_a A(s,a) \\
+&=\max_a \Big[Q(s,a)-V(s)\Big] \\
+&=\max_a Q(s,a)-\mathbb{E}_aQ(s,a)\\
+&\geq 0 
+\end{aligned}
+$$
+
+总是保证回报不下降的。
+
+那么看起来似乎贪心的策略迭代方法是一个很好的方法。
+然而，由于估计（对$V,Q$的估计）和近似（对$\mathbb{E}$的计算不是严格穷举的，而是基于采样）的误差，总是存在某些状态$s$使得$\sum_{a}\tilde{\pi}(a\vert s)A_\pi(s,a) < 0$，因此贪心策略迭代也不是那么好。
+
+
+
+
 
 
 
