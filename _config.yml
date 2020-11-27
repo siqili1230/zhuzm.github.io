@@ -9,7 +9,7 @@
 title: siqili's Blog
 brief-intro: 要多想
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://siqili1230.github.io" # the base hostname & protocol for your site
+url: "https://zhuzm.github.io" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
