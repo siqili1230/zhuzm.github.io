@@ -20,8 +20,8 @@ mathjax: true
 ![image-1](\images\2021-01-02-Causal-1\image-1.png)
 
 Consider following example, we cannot take 
-$$Y_i \mid  _{T=1} - Y_i \mid  _{T=0}$$
- as the causal effect because $Y_i\mid _{T=1}$ cannot represent the potential outcome of "if we take $T=1$". 
+$Y_i \mid  _{T=1} - Y_i \mid  _{T=0}$
+as the causal effect because $Y_i\mid _{T=1}$ cannot represent the potential outcome of "if we take $T=1$". 
 
 The main difference between causation and correlation is $Y_i\mid _{T=1}\neq Y_i\mid _{do(T=1)}$  
 
@@ -38,7 +38,10 @@ which is because we have confounding association $C$:
 
 ## Identificability
 
-![image-11](\images\2021-01-02-Causal-1\image-11.png)
+
+Our goal is to calculate causal quantity with statistic quantity:
+
+![image-12](\images\2021-01-02-Causal-1\image-12.png)
 
 
 ## Assumption 1: Ignorability
