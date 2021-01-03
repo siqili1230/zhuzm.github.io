@@ -19,7 +19,9 @@ mathjax: true
 
 ![image-1](\images\2021-01-02-Causal-1\image-1.png)
 
-Consider following example, we cannot take $Y_i | T=1 - Y_i | T=0$ as the causal effect because $Y_i|_{T=1}$ cannot represent the potential outcome of "if we take $T=1$". 
+Consider following example, we cannot take 
+$$Y_i | _{T=1} - Y_i | _{T=0}$$
+ as the causal effect because $Y_i|_{T=1}$ cannot represent the potential outcome of "if we take $T=1$". 
 
 The main difference between causation and correlation is $Y_i|_{T=1}\neq Y_i|_{do(T=1)}$  
 
