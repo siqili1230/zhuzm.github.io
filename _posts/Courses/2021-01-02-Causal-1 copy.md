@@ -20,16 +20,16 @@ mathjax: true
 ![image-1](\images\2021-01-02-Causal-1\image-1.png)
 
 Consider following example, we cannot take 
-$$Y_i | _{T=1} - Y_i | _{T=0}$$
- as the causal effect because $Y_i|_{T=1}$ cannot represent the potential outcome of "if we take $T=1$". 
+$$Y_i \mid  _{T=1} - Y_i \mid  _{T=0}$$
+ as the causal effect because $Y_i\mid _{T=1}$ cannot represent the potential outcome of "if we take $T=1$". 
 
-The main difference between causation and correlation is $Y_i|_{T=1}\neq Y_i|_{do(T=1)}$  
+The main difference between causation and correlation is $Y_i\mid _{T=1}\neq Y_i\mid _{do(T=1)}$  
 
-Here we calculate the true causal effect, $Y_i|_{do(T=1)}-Y_i|_{do(T=0)}$, noted as $Y_i(1)-Y_i(0)$:
+Here we calculate the true causal effect, $Y_i\mid _{do(T=1)}-Y_i\mid _{do(T=0)}$, noted as $Y_i(1)-Y_i(0)$:
 
 $$
 \mathbb{E}[Y_i(1)-Y_i(0)]=\mathbb{E}[Y_i(1)]-\mathbb{E}[Y_i(0)]\\
-\neq \mathbb{E}[Y_i|T=1]-\mathbb{E}[Y_i|T=0)]
+\neq \mathbb{E}[Y_i\mid T=1]-\mathbb{E}[Y_i\mid T=0)]
 $$
 
 which is because we have confounding association $C$:
@@ -46,7 +46,7 @@ which is because we have confounding association $C$:
 The igorability can be showed as following:
 $$
 \mathbb{E}[Y(1)]-\mathbb{E}[Y(0)]
-= \mathbb{E}[Y(1)|T=1]-\mathbb{E}[Y(0)|T=0)]
+= \mathbb{E}[Y(1)\mid T=1]-\mathbb{E}[Y(0)\mid T=0)]
 $$
 
 which means that the potential outcome $Y(1)$ is regardless of what the $T$ value is in practice. In the following table, the blankets in $Y(1)$ and $Y(0)$ columns are the unobservable outcomes. Those values are independent of whether corresponding $T$ is taken.
@@ -71,7 +71,7 @@ However, we don't know whether the data set satisfies exchangeability. Looking a
 
 ![image-5](\images\2021-01-02-Causal-1\image-5.png)
 
-So the conditional exchangeability is proposed that $(Y(1),Y(0))\perp\perp T|X$, where $X$ represents "drunk/sober".
+So the conditional exchangeability is proposed that $(Y(1),Y(0))\perp\perp T\mid X$, where $X$ represents "drunk/sober".
 So we have:
 
 ![image-6](\images\2021-01-02-Causal-1\image-6.png)
