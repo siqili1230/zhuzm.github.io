@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Notes of Causal Inference"
+title:  "Notes of Causal Inference-1"
 date:   2021-01-02 23:12:18 +0800
 categories: Courses
 tags: Notes, Causal Inference
@@ -13,7 +13,7 @@ mathjax: true
 
 [Course Web](https://www.bradyneal.com/causal-inference-course)
 
-# Notes of Causal Inference
+# Notes of Causal Inference-1
 
 ## What Does Imply Causation?
 
