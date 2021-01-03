@@ -68,7 +68,7 @@ Well, in another perspective, the ingorability can be viewed as exchangeability:
 
 which means that the outcomes is independent of what data you choose.
 
-## Conditional exchangeability
+## Assumption 1: Conditional exchangeability
 
 However, we don't know whether the data set satisfies exchangeability. Looking at the following example, we find that the distribution of "drunk/sober" in $T=1$ is different from it in $T=0$, where exchangeability is not satisfied.
 
@@ -79,13 +79,13 @@ So we have:
 
 ![image-6](\images\2021-01-02-Causal-1\image-6.png)
 
-## Unconfoundedness
+## Assumption 2: Unconfoundedness
 
 Unconfoundedness is an untestable assumption that $X$ is the only confoundedness and there is no unobservable "W".
 
 ![image-7](\images\2021-01-02-Causal-1\image-7.png)
 
-## Positivity
+## Assumption 2: Positivity
 
 Positivity demands that the support set is consist of the set $X$.
 
@@ -95,7 +95,13 @@ And if we don't have positivity, we have to predict the potential outcomes:
 
 ![image-9](\images\2021-01-02-Causal-1\image-9.png)
 
-## Consistency
+## Assumption 3: No Interference
+
+No interference means that the choice of $T$ in other samples doesn't influence this outcome:
+
+![image-13](\images\2021-01-02-Causal-1\image-13.png)
+
+## Assumption 4: Consistency
 
 The same $T$ must correspond to the same outcome.
 
