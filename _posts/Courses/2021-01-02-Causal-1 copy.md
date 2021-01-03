@@ -30,86 +30,72 @@ $$
 \neq \mathbb{E}[Y_i|T=1]-\mathbb{E}[Y_i|T=0)]
 $$
 
+which is because we have confounding association $C$:
 
-## Value Iteration
-Note $\mathcal{T}$ as the bellman optimal operator and $Q^*$ as the optimal Q-function that:
+![image-2](\images\2021-01-02-Causal-1\image-2.png)
 
-$$
-(\mathcal{T} Q) (s,a) = R(s,a)+\gamma \mathbb{E}P(s'|s,a)[\arg\max_{a'}Q(s',a')]
-$$
+## Identificability
 
-$$
-Q^*=\mathcal{T} Q^* (bellman  \ optimality \ equation)
-$$
+![image-11](\images\2021-01-02-Causal-1\image-11.png)
 
-Similarly,
-$$
-(\mathcal{T}^\pi Q) (s,a) = R(s,a)+\gamma \mathbb{E}P(s'|s,a)[Q(s',\pi(s')] \\
-Q^\pi=\mathcal{T}^\pi Q^\pi
-$$
 
-### Planning
+## Assumption 1: Ignorability
 
-Assume we know the DMP model, then we can do planning: compute $V^*,Q^*$ given $\mathcal{M}$ by **value iteration** and **policy iteration**.
-
-We have the algorithm that,
+The igorability can be showed as following:
 $$
-Q^{*,0}=Q_0\\
-Q^{*,h}=\mathcal{T} Q^{*,h-1}
+\mathbb{E}[Y(1)]-\mathbb{E}[Y(0)]
+= \mathbb{E}[Y(1)|T=1]-\mathbb{E}[Y(0)|T=0)]
 $$
 
+which means that the potential outcome $Y(1)$ is regardless of what the $T$ value is in practice. In the following table, the blankets in $Y(1)$ and $Y(0)$ columns are the unobservable outcomes. Those values are independent of whether corresponding $T$ is taken.
 
+![image-3](\images\2021-01-02-Causal-1\image-3.png)
 
-Q: If we denote $\pi_h:=\pi_{Q^{*,h}}$ , and  $Q^{\pi_h}$ be stationary point of operator  $\mathcal{T}^{\pi_h}$ , then are  $Q^{\pi_h}$  and  $Q^{*,h}$  equivalent?
-
-A: No. This problem equals that assume a policy $\pi$ is derived from $Q$, then whether $Q$ must be equal to the converged Q-function $Q^{\pi}$. It's obviously not.
-
-Q: How good is the policy $\pi_{Q^{*,H}}$ ?
-
-A: For arbitrary $f$, $\|V^*-V^{\pi_f}\|_\infty=\frac{2 \|f-Q^*\|_\infty}{1-\gamma}$
-
-Q: Bound $\|Q^{*,H}-Q^*\|_\infty$ ?
-
-A: Lemma : $\|\mathcal{T}f-\mathcal{T}f'\|_\infty\leq\gamma\|f-f'\|_\infty$
-
-Prove:
-$$
-\|Q^{*,H}-Q^*\|_\infty=\|\mathcal{T}Q^{*,H-1}-\mathcal{T}Q^*\|_\infty \\
-\leq\gamma\|Q^{*,H-1}-Q^*\|_\infty \\
-\leq \gamma^H\|Q^{*,0}-Q^*\|_\infty\\
-\leq \gamma^H\frac{R_{max}}{1-\gamma}
-$$
-
-
-Another prove:
-$$
-V^{\pi,H}(s):=\mathbb{E}[\sum_{t=1}^H\gamma^{t-1}r_t|\pi,s_1=s]
-$$
+The ignorability can be described as:
 
 $$
-V^{*,H}=\max_\pi V^{\pi,H}(s)
+(Y(1),Y(0)) \perp \perp T
 $$
 
-$$
-Q^{*}-Q^{*,H}\leq Q^*-Q^{\pi^*,H} \\
-(since \ \pi^* is \ optimal \ for \ infinity \ horizon, but \ not \ when \ evaluated \ in \ H \ horizon)\\
-=Q^{\pi^*}-Q^{\pi^*,H}\\
-$$
+Well, in another perspective, the ingorability can be viewed as exchangeability:
 
-For $\forall s,a, $
-$$
-Q^{\pi^*}(s,a)-Q^{\pi^*,H}(s,a)=\mathbb{E}[\sum_{t=H+1}^\infty \gamma^{t-1} r_t|s_1=s,a_1=a,\pi^*]\\
-\leq \gamma^H(\sum_{t=1}^\infty \gamma^{t-1}R_{max})\\
-=\gamma^H\frac{R_{max}}{1-\gamma}
-$$
+![image-4](\images\2021-01-02-Causal-1\image-4.png)
 
+which means that the outcomes is independent of what data you choose.
 
-![image-20201206165112421](/images/2020-11-26-CS598 notes 1/image-1.png)
+## Conditional exchangeability
 
-If we use a non-stationary policy that we execute $\pi_i$ in the i-th step, then the bound can be reduced from $O(1/(1-\gamma)^2)$ down to $O(1/(1-\gamma))$.
+However, we don't know whether the data set satisfies exchangeability. Looking at the following example, we find that the distribution of "drunk/sober" in $T=1$ is different from it in $T=0$, where exchangeability is not satisfied.
 
-## exercise
+![image-5](\images\2021-01-02-Causal-1\image-5.png)
 
+So the conditional exchangeability is proposed that $(Y(1),Y(0))\perp\perp T|X$, where $X$ represents "drunk/sober".
+So we have:
 
+![image-6](\images\2021-01-02-Causal-1\image-6.png)
 
-![image-20201206165344658](\images\2020-11-26-CS598 notes 1\image-2.png)
+## Unconfoundedness
+
+Unconfoundedness is an untestable assumption that $X$ is the only confoundedness and there is no unobservable "W".
+
+![image-7](\images\2021-01-02-Causal-1\image-7.png)
+
+## Positivity
+
+Positivity demands that the support set is consist of the set $X$.
+
+![image-8](\images\2021-01-02-Causal-1\image-8.png)
+
+And if we don't have positivity, we have to predict the potential outcomes:
+
+![image-9](\images\2021-01-02-Causal-1\image-9.png)
+
+## Consistency
+
+The same $T$ must correspond to the same outcome.
+
+![image-10](\images\2021-01-02-Causal-1\image-10.png)
+
+## Summary
+
+![image-11](\images\2021-01-02-Causal-1\image-11.png)
