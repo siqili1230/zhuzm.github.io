@@ -15,6 +15,13 @@ mathjax: true
 
 ## Introduction
 
+### C51 & QR-DQN 
+Paper: [A Distributional Perspectiveon Reinforcement Learning](https://arxiv.org/abs/1707.06887)
+Paper: [Distributional Reinforcement Learning with Quantile Regression](https://arxiv.org/abs/1710.10044)
+
+These two have been introduced in [former reading notes](https://siqili1230.github.io/2019/01/03/Implicit-Quantile-Networks-for-Distributional-Reinforcement-Learning/).
+
+
 ### IQN
 
 Paper: [Implicit Quantile Networks for Distributional Reinforcement Learning](https://arxiv.org/pdf/1806.06923.pdf) (ICML 2018)
@@ -35,8 +42,24 @@ $$
 
 which changes $\tau \sim U(0,1)$ to $\tau \sim U(0,\eta)$ for guaranteeing performance on worse conditions.
 
-
 ![image-1](\images\2021-03-04-review of distributional RL\IQN-fig-1.png)
+
+### FQF
+
+Paper: [Fully Parameterized Quantile Function for Distributional Reinforcement Learning](https://arxiv.org/pdf/1911.02140.pdf)
+
+The main contribution of this paper is the parameterized quantiles $\tau(\theta)$ while in IQN the quantiles are sampled from a distribution. FQF projects the quantile function into a staircase function:
+
+![image-1](\images\2021-03-04-review of distributional RL\FQF-formula-1.png)
+
+and find the staircase funtion with minimal 1-Wasserstein loss:
+
+![image-1](\images\2021-03-04-review of distributional RL\FQF-formula-2.png).
+
+![image-1](\images\2021-03-04-review of distributional RL\FQF-fig-1.png).
+
+
+
 
 
 
