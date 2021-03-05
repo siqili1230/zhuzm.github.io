@@ -44,6 +44,10 @@ which changes $\tau \sim U(0,1)$ to $\tau \sim U(0,\eta)$ for guaranteeing perfo
 
 ![image-1](\images\2021-03-04-review of distributional RL\IQN-fig-1.png)
 
+A special trick of embedding the quantile $\tau$ is widely used in Distributional RL:
+
+![image-1](\images\2021-03-04-review of distributional RL\IQN-formula-2.png)
+
 ### FQF
 
 Paper: [Fully Parameterized Quantile Function for Distributional Reinforcement Learning](https://arxiv.org/pdf/1911.02140.pdf)
@@ -52,14 +56,28 @@ The main contribution of this paper is the parameterized quantiles $\tau(\theta)
 
 ![image-1](\images\2021-03-04-review of distributional RL\FQF-formula-1.png)
 
-and find the staircase funtion with minimal 1-Wasserstein loss:
+and find the staircase function with minimal 1-Wasserstein loss:
 
 ![image-1](\images\2021-03-04-review of distributional RL\FQF-formula-2.png).
 
 ![image-1](\images\2021-03-04-review of distributional RL\FQF-fig-1.png).
 
+### Non-crossing QR-DQN
+
+Paper: [Non-crossing quantile regression for deep reinforcement learning](https://proceedings.neurips.cc//paper/2020/file/b6f8dc086b2d60c5856e4ff517060392-Paper.pdf)
+
+Experiments show that quantile regression cannot guarantee the non-decreasing property of learned quantiles.
+
+The constrained optimization is:
+
+![image-1](\images\2021-03-04-review of distributional RL\NC-formula-1.png).
+
+To solve this problem, NC-QR-DQN search for a subspace of initial Z-space that $Z_Q\in Z_\Theta$. quantile functions $Z_q=\{\theta_i\}_{i=1}^N$ in $Z_Q$ are all satisfying the non-decreasing constraint. 
+
+In practice, it uses a network to produce the $\phi_{i,a}$ (the i-th quantile value for action $a$ given a state) and re-computes the outputs by $\psi_{i,a}=\sum_{j=1}^i \phi_{i,a}$ where $\psi_{N,a}=1$ and $\psi_{i,a}$ is non-decreasing. Since $\psi\in [0,1]$, there is another network to scale 
 
 
+![image-1](\images\2021-03-04-review of distributional RL\NC-fig-1.png).
 
 
 
