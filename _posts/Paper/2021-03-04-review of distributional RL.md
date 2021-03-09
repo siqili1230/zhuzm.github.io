@@ -87,10 +87,11 @@ $\delta_{i,j}=r+\gamma q_j(s',a^*)-q_i(s,a)$
 where 
 $a^*=\arg\max_{a'}\sum_{j=1}^N q_j(s',a')$.
 
-
 ![image-1](\images\2021-03-04-review of distributional RL\NC-fig-1.png).
 
+By the way, the precise estimation of truncated variance by including the non-cross constraint can help measure the intrinsic uncertainty.
 
+![image-1](\images\2021-03-04-review of distributional RL\NC-fig-2.png).
 
 ### DLTV
 
@@ -102,6 +103,7 @@ c_t=c\sqrt{\log t/t}\\
 a^*=\arg\max_{a'}(Q(s,a')+c_t\sqrt{\sigma_+^2})
 $$
 
+where $\tilde{\theta}$ is the median rather than mean.
 
 
 
