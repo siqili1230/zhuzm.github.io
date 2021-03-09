@@ -11,8 +11,6 @@ mathjax: true
 * content
 {:toc}
 
-论文题目: [trust region policy optimization](http://proceedings.mlr.press/v37/schulman15.pdf)
-
 ## Introduction
 
 ### C51 & QR-DQN 
@@ -84,7 +82,10 @@ $$
 q_i(s,a) =\alpha(s,a)*\psi_{i,a}+\beta(s,a)
 $$
 
-And the modified TD error is $\delta_{i,j}=r+\gamma q_j(s',a^*)-q_i(s,a)$ where $a^*=\arg\max_{a'}\sum_{j=1}^N q_j(s',a')$.
+And the modified TD error is 
+$\delta_{i,j}=r+\gamma q_j(s',a^*)-q_i(s,a)$
+where 
+$a^*=\arg\max_{a'}\sum_{j=1}^N q_j(s',a')$.
 
 
 ![image-1](\images\2021-03-04-review of distributional RL\NC-fig-1.png).
