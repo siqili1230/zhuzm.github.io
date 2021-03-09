@@ -74,14 +74,32 @@ The constrained optimization is:
 
 To solve this problem, NC-QR-DQN search for a subspace of initial Z-space that $Z_Q\in Z_\Theta$. quantile functions $Z_q=\{\theta_i\}_{i=1}^N$ in $Z_Q$ are all satisfying the non-decreasing constraint. 
 
-In practice, it uses a network to produce the $\phi_{i,a}$ (the i-th quantile value for action $a$ given a state) and re-computes the outputs by $\psi_{i,a}=\sum_{j=1}^i \phi_{i,a}$ where $\psi_{N,a}=1$ and $\psi_{i,a}$ is non-decreasing. Since $\psi\in [0,1]$, there is another network to scale 
+In another perspective, solving this optimization problem is equivalent to finding a projection operator $\Pi_{W_1}$ such that:
+
+![image-1](\images\2021-03-04-review of distributional RL\NC-formula-2.png).
+
+In practice, it uses a network to produce the $\phi_{i,a}$ (the i-th quantile value for action $a$ given a state) and then re-computes the outputs by $\psi_{i,a}=\sum_{j=1}^i \phi_{j,a}$ where $\psi_{N,a}=1$ and $\psi_{i,a}$ is non-decreasing. Since $\psi\in [0,1]$, there is another scale network to recover the logits in $[0,1]$ to the original range with :
+
+$$
+q_i(s,a) =\alpha(s,a)*\psi_{i,a}+\beta(s,a)
+$$
+
+And the modified TD error is $\delta_{i,j}=r+\gamma q_j(s',a^*)-q_i(s,a)$ where $a^*=\arg\max_{a'}\sum_{j=1}^N q_j(s',a')$.
 
 
 ![image-1](\images\2021-03-04-review of distributional RL\NC-fig-1.png).
 
 
 
+### DLTV
 
+Decaying Left Truncated Varianc--a novel exploration strategy that more sufficientli utilize the distributional information. The key idea is that the quantile is usually assymmetric and the upper trail variability is more relevant. There is an upper truncated measure of the uncertainty:
+
+$$
+\sigma_+^2=\frac{1}{2N}\sum_{i=N/2}^N(\tilde{\theta}-\theta_i)^2 \\
+c_t=c\sqrt{\log t/t}\\
+a^*=\arg\max_{a'}(Q(s,a')+c_t\sqrt{\sigma_+^2})
+$$
 
 
 
