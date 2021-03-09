@@ -106,6 +106,16 @@ $$
 where $\tilde{\theta}$ is the median rather than mean.
 
 
+### Expectile Distributional RL (EDRL)
+
+Paper: [Statistics and Samples in Distributional Reinforcement Learning](https://arxiv.org/abs/1902.08102)
+
+In this paper, the algorithms of distributional RL can be decomposed into following steps:
+
+1. Find a series of statistics to discrib the distribution (e.g., the discrete or continuous quantiles)
+2. Find a rule to update/re-compute those statistics and get losses
+
+This paper proposes the ``expectation quantile''
 
 
 
