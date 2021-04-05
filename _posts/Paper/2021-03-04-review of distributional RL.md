@@ -113,11 +113,60 @@ Paper: [Statistics and Samples in Distributional Reinforcement Learning](https:/
 In this paper, the algorithms of distributional RL can be decomposed into following steps:
 
 1. Find a series of statistics to discrib the distribution (e.g., the discrete or continuous quantiles)
-2. Find a rule to update/re-compute those statistics and get losses
+2. Find a rule to update/re-compute those statistics and get losses.
 
-This paper proposes the ``expectation quantile''
+Previous distributional RL can be divided into two types: 
 
+1.Categorical DRL: $\eta(x,a)=\sum_{k=1}^Kp_k(x,a)\delta_{z_k}$ and learns weights with fixed quantiles $z_k$
 
+2.Quantile DRL: $\eta(x,a)=\frac{1}{K}\sum_{k=1}^K\delta_{z_k(x,a)}$ and learns the new $\tau_k=\frac{2k-1}{2K}$ quantiles by minimizing the quantile regression loss:
+$$
+QR(q;\mu,\tau_k)=\mathbb{E}_{Z\sim\mu}[[\tau_k\mathbb{I}_{Z>q}+(1-\tau_k)\mathbb{I}_{Z\geq q}]\mid Z-q\mid]
+$$
+
+This paper proposes the ``expectation quantile'' (expectiles):
+
+$$
+ER(q;\mu,\tau_k)=\mathbb{E}_{Z\sim\mu}[[\tau_k\mathbb{I}_{Z>q}+(1-\tau_k)\mathbb{I}_{Z\geq q}]\mid Z-q\mid^2]
+$$
+
+![image-1](\images\2021-03-04-review of distributional RL\EDRL-fig-2.png).
+
+CDRL overestimates the variance because the projection splits the probability mass across the discrete support. In contrast, EDRL(naive) only replaces the quantiles with expectiles and underestimates the variance.
+
+There is a crucial problem that the learned $z_k(x,a)$ have the semantic of a statistic, but in updating, $z_k(x,a)$ in $(\Tau^\pi\eta)(x,a)$ have the semantic of both statistics and samples
+
+To solve this problem, EDRL seperates the bellman updating process into two parts:
+
+1.learn statistics (expectiles) from the recovered distribution/samples;
+
+2.Recover the distribution from learned statistics.
+
+![image-1](\images\2021-03-04-review of distributional RL\EDRL-formula-1.png).
+
+![image-1](\images\2021-03-04-review of distributional RL\EDRL-formula-2.png).
+
+![image-1](\images\2021-03-04-review of distributional RL\EDRL-formula-3.png).
+
+### quantiles and expectiles
+quantiles and expectiles correspond to the concept of median and mean.
+In the regression perspective of the median and mean, it can be viewed as the solution of an optimization problem under different norm:
+
+1.$\textbf{median}[y]=\arg\min_{m\in\mathbb{R}}[\frac{1}{n}\sum_{i=1}^n\mid y_i-m\mid]$
+
+2.$\textbf{mean}[y]=\arg\min_{m\in\mathbb{R}}[\frac{1}{n}\sum_{i=1}^n(y_i-m)^2]$
+
+Correspondingly, given risk functions:
+
+1.$\mathcal{R}_\tau^q(u)=\mid u\mid\cdot [(1-\tau)\cdot\mathbb{I}(u<0)+\tau\cdot\mathbb{I}(u\geq0)]$
+
+2.$\mathcal{R}_\tau^e(u)=\mid u\mid^2\cdot [(1-\tau)\cdot\mathbb{I}(u<0)+\tau\cdot\mathbb{I}(u\geq0)]$
+
+which is equivalent to weighted meadian/mean.
+
+### MMD-DQN
+
+Paper: [Distributional Reinforcement Learning with Maximum Mean Discrepancy](https://www.researchgate.net/publication/343228735_Distributional_Reinforcement_Learning_with_Maximum_Mean_Discrepancy)
 
 
 
