@@ -25,7 +25,7 @@ This paper learns invariant representation of perturbated observations.
 
 This paper supposes an observable $z_t$ as the instrumental variable that affects the action $a_t$ jointly with state $x_t$. The difference between $x_t$ and $x_t$ is that $z_t$ affects the $x_{t+1}$ only through $a_t$. For example, $a_t$ is the treatment, $x_t$ is the current health status and $z_t$ is the physician's preference for treatments.
 
-But what's the advantage of introducing such structure? It calculates $\hat{x}'=f(x',a|z)$
+But what's the advantage of introducing such structure? It calculates $\hat{x}'=f(x',a\mid z)$
 
 
 ### RL with confounders
@@ -64,3 +64,17 @@ It uses data to attain posterior distribution of $u$ and re-computer the target 
 
 [Counterfactual Off-Policy Evaluation with Gumbel-Max Structural Causal Models (ICML19)](https://arxiv.org/abs/1905.05824)
 
+This paper introduces a class of SCMs to generate counterfactual trajectories in POMDP.
+
+![image-1](\images\2021-03-11-review of causal RL\deconfound-7.png)
+
+Cannot understand the example in section 3.1.
+
+It defines the Counterfactual Stability, which means that in a categorical SCM if an intervention $I'$ increase the probability of oobserved state $i$ compared with the intervention $I$, then we can only observe $i$ under $I'$.
+
+![image-1](\images\2021-03-11-review of causal RL\deconfound-8.png)
+
+
+[Off-Policy Evaluation in Partially Observable Environments](https://arxiv.org/pdf/1909.03739.pdf)
+
+This paper defines Decoupled POMDP, where $(u,z)$ represents observed and unobserved states.
